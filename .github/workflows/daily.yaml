@@ -19,14 +19,6 @@ jobs:
           java-version: ${{ matrix.java }}
           check-latest: true
           cache: 'maven'
-      - name: Download Maven Repo
-        uses: actions/download-artifact@v4
-        with:
-          name: maven-repo
-          path: .
-      - name: Extract Maven Repo
-        shell: bash
-        run: tar -xzf maven-repo.tgz -C ~
       - name: Build Quarkus CLI
         run: |
           git clone https://github.com/quarkusio/quarkus.git && cd quarkus/devtools/cli && mvn -B --no-transfer-progress -s ../../../.github/mvn-settings.xml clean install -Dquickly -Dno-test-modules -Prelocations
