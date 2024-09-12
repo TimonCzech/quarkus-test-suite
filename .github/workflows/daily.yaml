@@ -61,7 +61,7 @@ jobs:
       - name: Install Quarkus CLI
         run: |
           echo java -jar ~/.m2/repository/io/quarkus/quarkus-cli/999-SNAPSHOT/quarkus-cli-999-SNAPSHOT-runner.jar %* > quarkus-dev-cli.bat
-          quarkus-dev-cli.bat version
+          call quarkus-dev-cli.bat version
       - name: Build in JVM mode
         shell: bash
         run: |
