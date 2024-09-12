@@ -66,7 +66,7 @@ jobs:
       - name: Build in JVM mode
         shell: bash
         run: |
-          mvn -B --no-transfer-progress -fae -s .github/mvn-settings.xml clean verify -Dinclude.quarkus-cli-tests -Dts.quarkus.cli.cmd="${PWD}/quarkus-dev-cli.bat" -Dquarkus.platform.version=3.14.2
+          mvn -B --no-transfer-progress -fae -s .github/mvn-settings.xml clean verify -Dinclude.quarkus-cli-tests -Dts.quarkus.cli.cmd="${PWD}/quarkus-dev-cli.bat" -D"all-modules"
       - name: Zip Artifacts
         shell: bash
         if: failure()
