@@ -21,6 +21,7 @@ jobs:
           cache: 'maven'
       - name: Build Quarkus CLI
         run: |
+          git config --system core.longpaths true
           git clone https://github.com/quarkusio/quarkus.git && cd quarkus/devtools/cli && mvn -B --no-transfer-progress -s ../../../.github/mvn-settings.xml clean install -Dquickly -Dno-test-modules -Prelocations
       - name: Install Quarkus CLI
         run: |
