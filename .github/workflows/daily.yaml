@@ -60,9 +60,9 @@ jobs:
         run: tar -xzf maven-repo.tgz -C ~
       - name: Install Quarkus CLI
         run: |
-          echo "java -jar $home/.m2/repository/io/quarkus/quarkus-cli/999-SNAPSHOT/quarkus-cli-999-SNAPSHOT-runner.jar %*" > quarkus-dev-cli.bat
+          echo "java -jar $home/.m2/repository/io/quarkus/quarkus-cli/999-SNAPSHOT/quarkus-cli-999-SNAPSHOT-runner.jar `$Args" > quarkus-dev-cli.ps1 
           # Launches in powershell
-          .\quarkus-dev-cli.bat version
+          .\quarkus-dev-cli.ps1 version
       - name: Build in JVM mode
         shell: bash
         run: |
