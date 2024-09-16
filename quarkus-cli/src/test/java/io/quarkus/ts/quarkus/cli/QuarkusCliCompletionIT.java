@@ -13,7 +13,6 @@ import io.quarkus.test.scenarios.annotations.DisabledOnNative;
 import org.junit.jupiter.api.condition.DisabledOnOs;
 import org.junit.jupiter.api.condition.OS;
 
-@DisabledOnOs(value = OS.WINDOWS, disabledReason = "Doesn't work on windows")
 @Tag("QUARKUS-960")
 @Tag("quarkus-cli")
 @QuarkusScenario
