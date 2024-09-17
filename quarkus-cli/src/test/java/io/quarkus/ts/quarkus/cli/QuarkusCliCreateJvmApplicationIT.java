@@ -345,6 +345,7 @@ public class QuarkusCliCreateJvmApplicationIT {
 
     private void assertInstalledExtensions(QuarkusCliRestService app, String... expectedExtensions) {
         List<String> extensions = app.getInstalledExtensions();
+        extensions.forEach(System.out::println);
         Stream.of(expectedExtensions).forEach(expectedExtension -> assertTrue(extensions.contains(expectedExtension),
                 expectedExtension + " not found in " + extensions));
     }
