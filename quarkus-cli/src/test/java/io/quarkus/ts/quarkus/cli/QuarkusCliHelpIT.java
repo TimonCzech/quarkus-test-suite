@@ -25,7 +25,8 @@ public class QuarkusCliHelpIT {
     @Test
     public void shouldCommandsHaveHelpOption() {
         for (CommandWithHelp command : CommandWithHelp.values()) {
-            QuarkusCliClient.Result result = cliClient.run(command.getCommand(), HELP_COMMAND);
+            //Windows adds "" when there is a space: "create cli" instead of create cli
+            QuarkusCliClient.Result result = cliClient.run(command.getCommand().replace("\"", ""), HELP_COMMAND);
             assertTrue(result.isSuccessful(), "Help command for '" + command.getCommand() + "' didn't work");
             assertTrue(result.getOutput().contains(command.getExpectedHelp()),
                     "Unexpected help output for Command '" + command.getCommand() + "': " + result.getOutput());
